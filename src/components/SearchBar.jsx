@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+const apiKey = import.meta.env.VITE_OWM_API_KEY;
+
 const SearchBar = () => {
 
     const [query, setQuery] = useState();
@@ -16,7 +18,7 @@ const SearchBar = () => {
                 event.preventDefault();
                 console.log(`Query submitted: ${query}`);
                 async function getWeather() {
-                    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=624537293cd98022c7d7414a3d507efb&units=metric`;
+                    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=metric`;
                     try {
                         const response = await fetch(url);
                         if (!response.ok) {
