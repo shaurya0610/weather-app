@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <SearchBar />
+      <SearchBar /> {/*Lock Search bar to top of screen*/}
       <Weather />
     </>
   )
