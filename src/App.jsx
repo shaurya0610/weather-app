@@ -1,17 +1,24 @@
 import { useState } from 'react'
 import './App.css'
-import Weather from './components/weather'
+import Weather from './components/Weather'
 import SearchBar from './components/SearchBar'
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [weather, setWeather] = useState();
+  const [aqi, setAqi] = useState();
 
   return (
     <>
-      <SearchBar /> {/*Lock Search bar to top of screen*/}
-      <Weather />
+      <SearchBar
+        setWeather={setWeather}
+        setAqi={setAqi}
+      />
+      <Weather
+        weather={weather}
+        aqi={aqi}
+      />
     </>
   )
 }
