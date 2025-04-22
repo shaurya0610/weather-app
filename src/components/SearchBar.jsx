@@ -6,14 +6,8 @@ const aqicnApiKey = import.meta.env.VITE_AQICN_API_KEY;
 const SearchBar = ({ setWeather, setAqi }) => {
 
     const [query, setQuery] = useState();
-    const [message, setMessage] = useState();
+    const [message, setMessage] = useState(); //For telling the user to enter a valid city
     const popularCities = ["delhi", "mumbai", "bangalore", "chennai", "hyderabad"];
-
-    useEffect(() => {
-        if (query) {
-            console.log("Query changed to:", query);
-        }
-    }, [query]);
 
     useEffect(() => {
         if (message) {
@@ -73,20 +67,18 @@ const SearchBar = ({ setWeather, setAqi }) => {
                 <div>
                     <span>Popular Cities:</span>
 
+                    {/* Render a button for each city in the popularCities array */}
                     {popularCities.map((city) => (
                         <button
-                            key={city}
+                            key={city} //Give each button a unique "key" (required by React when rendering lists)
                             onClick={() => setQuery(city)}
                             className="p-2 rounded-xl border"
                         >
+                            {/* Capitalising first letter in each button label */}
                             {String(city).charAt(0).toUpperCase() + String(city).slice(1)}
                         </button>
                     ))}
 
-                    {/*
-                    Hardcoding popular city button:
-                    <button onClick={() => { setQuery("delhi"); }} className='p-2 rounded-xl border'>Delhi</button>
-                    */}
                 </div>
             </form>
             {message && <p className="text-red-500 mt-2 transition-all">{message}</p>}
