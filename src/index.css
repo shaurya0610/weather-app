@@ -1,8 +1,4 @@
+@import './reset.css';
 @import "tailwindcss";
-
-body {
-  margin: 0;
-  background-color: #0f172a; /* slate-900 */
-  color: #f1f5f9; /* slate-100 */
-  font-family: system-ui, sans-serif;
-}
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
