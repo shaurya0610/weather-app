@@ -86,17 +86,3 @@ src/
 * Timezone offsets are handled to show local sunrise/sunset times.
 
 ---
-
-## 📸 Preview
-
-> *(Optional: Add a screenshot or GIF of the app here.)*
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Would you like help adding a deploy link or screenshot instructions to the README?
